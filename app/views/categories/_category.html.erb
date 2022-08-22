@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name: </th>
+      <th colspan="3"> Actions : </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @categories.each do |a| %>
+      <tr>
+        <td><%= a.name %></td>
+        <td><%= link_to 'Show',category_path(a)%></td>
+        <td>
+          <% if current_user.role == 'admin' %>
+              <%= link_to "Edit", edit_category_path(a) %>
+              <%= link_to "Delete", category_path(a),method: :delete, data: {confirm: "Are you sure?"} %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+</table>
+
+<% if current_user.role == 'admin' %>
+  <p>
+    <%= link_to 'create new category',new_category_path%>
+  </p>
+<% end %>

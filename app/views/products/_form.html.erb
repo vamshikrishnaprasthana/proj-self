@@ -1,0 +1,35 @@
+<% if @product.errors.any? %>
+<ul>
+  <% @product.errors.full_messages.each do |m| %>
+  <%= m %>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_with(model: @product,local: true) do |f| %>
+
+  <p>
+    <%= f.label :Name %><br/>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :Price %><br/>
+    <%= f.number_field :price %>
+  </p>
+
+  <p>
+    <%= f.label :Description %><br/>
+    <%= f.text_field :description %>
+  </p>
+
+  <p>
+    <%= f.label :Rating %><br/>
+    <%= f.number_field :rating %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

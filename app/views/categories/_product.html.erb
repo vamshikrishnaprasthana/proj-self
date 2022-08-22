@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>Category of Product: </th>
+      <th>Name: </th>
+      <th>Price: </th>
+      <th>Description: </th>
+      <th>Rating: </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |a| %>
+      <tr>
+        <td><%= a.category.name %></td>
+        <td><%= a.name %></td>
+        <td><%= a.price %></td>
+        <td><%= a.description %></td>
+        <td><%= a.rating %></td>
+      </tr>
+      <% end %>
+    </tbody>
+</table>

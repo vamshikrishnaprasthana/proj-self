@@ -1,0 +1,10 @@
+<h1>Ordererd Items</h1>
+<% @orders.each do |j| %>
+<strong> Order_id :</strong><%= j.id %></br>
+  <% j.orderitems.each do |i| %>
+     <p><strong> qunatity: </strong><%= i.quantity %></p>
+     <p><strong> product :</strong><%= i.product.name %></p>
+     <p><strong> price :</strong><%= i.product.price*(i.quantity) %></p>
+  <% end %>
+  </br>
+<% end %>

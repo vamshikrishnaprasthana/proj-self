@@ -1,0 +1,10 @@
+<h1> Showing categories </h1>
+
+
+<p><strong>Name :</strong><%= @category.name %></p>
+<%= render "product" %>
+
+<%= link_to "Edit", edit_category_path(@category) %>
+<%= link_to "Delete", category_path(@category),method: :delete, data: {confirm: "Are you sure?"} %>
+
+<%= link_to 'return to categories',categories_path %>
